@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>DNI</th>
+    <th>Fecha de Nacimiento</th>
+    <th>Borrar</th>
+    
+  </tr>
+	<tr th:each="cliente: ${lista}">
+	
+	    <td th:text="${cliente.name}" />
+	    <td th:text="${cliente.lastName}" />
+	    <td th:text="${cliente.dni}" />
+	    <td th:text="${cliente.birthDate}" />
+	    <td>
+	     
+	     <form action="#" th:action="@{'/delete/{name}'(name=${cliente.name})}" th:method="delete" >
+	  		<input type="hidden" name="_method" value="delete" />
+	  		<button type="submit" id="submitButton">Borrar </button>
+  		
+		</form>
+                     
+	    </td>
+	
+	</tr>
+</table>
+
+
+</body>
+</html>

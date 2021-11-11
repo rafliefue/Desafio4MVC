@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form th:action="@{/new}" th:object="${cliente}" method="post">
+    <fieldset>
+        <legend>Datos del cliente</legend>
+        <table>
+            <tr>
+                <td><label>Nombre: </label></td>
+                <td><input type="text" th:field="*{name}" /></td>
+            </tr>
+            <tr>
+                <td><label>Apellidos: </label></td>
+                <td><input type="text" th:field="*{lastName}" /></td>
+            </tr>
+            <tr>
+                <td><label>DNI: </label></td>
+                <td><input type="text" th:field="*{dni}" /></td>
+            </tr>
+            <tr>
+                <td><label>Fecha: </label></td>
+                <td><input type="date" th:field="*{birthDate}" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Registrar</button>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<a href="/">Atras</a>
+</body>
+</html>

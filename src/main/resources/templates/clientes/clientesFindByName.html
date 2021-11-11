@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+ <form th:action="@{/find/cliente}" th:object="${cliente}" method="get">
+                            <div class="row m-b">
+                                <div class="col-sm-6">
+                                    Buscar por Nombre: <input id="filter" type="text" th:field="*{name}" class="form-control input-sm w-auto inline m-r"/>
+                                    <button class="md-btn md-fab m-b-sm indigo"><i class="material-icons md-24">Buscar</i></button>
+                                </div>
+                            </div>
+</form>
+<p th:text="${errorNoEncontrado}"></p>
+</body>
+<a href="/">Atras</a>
+</html>
